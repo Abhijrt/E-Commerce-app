@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export default class AddProducts extends Component {
   render() {
     return (
-      <div className="main-container">
+      <div className="main-container-form">
         <form action="" method="POST">
           <label for="#name">Name</label>
           <input

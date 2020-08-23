@@ -7,6 +7,8 @@ import { configureStore } from "./store";
 
 const store = configureStore();
 
+// console.log("STORE", store);
+
 ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>
