@@ -11,8 +11,8 @@ export default class NavBar extends Component {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link href="./products">Products</Nav.Link>
-              <Nav.Link href="./addProducts">Add a Products</Nav.Link>
+              <Nav.Link href="/products">Products</Nav.Link>
+              <Nav.Link href="/addProducts">Add a Products</Nav.Link>
             </Nav>
             <Nav>
               <Nav.Link href="#deets">Abhay Jirati</Nav.Link>
