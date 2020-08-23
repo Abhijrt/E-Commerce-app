@@ -23,6 +23,14 @@ export default class NavBar extends Component {
                   alt="my-img"
                 />
               </Nav.Link>
+              <Nav.Link eventKey={2} href="#memes">
+                <i
+                  id="cart-icon"
+                  className="fa fa-shopping-cart"
+                  // aria-hidden="true"
+                ></i>
+                <span id="cart-count">0</span>
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>

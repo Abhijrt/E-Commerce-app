@@ -12,7 +12,7 @@ class Products extends Component {
   }
   render() {
     const { products } = this.props;
-    // console.log("Products123435", products[0]);
+    console.log("Products123435", products);
     return (
       <div className="main-container">
         <div className="product-heading">
@@ -20,6 +20,7 @@ class Products extends Component {
           <div className="sort-btn">Sort by Price</div>
         </div>
         <div>
+          {/* <ProductItem /> */}
           {products.map((product) => {
             return <ProductItem key={product.id} product={product} />;
           })}

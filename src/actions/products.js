@@ -2,15 +2,16 @@ import { ADD_PRODUCTS } from "./actionTypes";
 
 export default function fetchProducts() {
   return (dispatch) => {
-    const url =
-      "https://my-json-server.typicode.com/Abhijrt/Fake-API-For-ECommerce/products";
-    fetch(url)
+    const url = "https://5f42874cd4b4790016fd7b1f.mockapi.io/products";
+    fetch(url, {
+      method: "GET",
+    })
       .then((response) => {
         // console.log("response", response);
         return response.json();
       })
       .then((data) => {
-        // console.log("DATA", data);
+        console.log("DATA", data);
         dispatch(addProducts(data));
       });
   };

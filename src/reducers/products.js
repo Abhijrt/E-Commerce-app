@@ -2,6 +2,8 @@ import { ADD_PRODUCTS } from "../actions/actionTypes";
 
 const initialProductState = {
   products: [],
+  cart: [],
+  isShowCart: false,
 };
 
 export function products(state = initialProductState, action) {
