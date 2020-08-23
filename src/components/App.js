@@ -10,8 +10,9 @@ class App extends React.Component {
       <Router>
         <div className="app">
           <NavBar />
-          {/* <Route path="/addProducts" component={AddProducts} />
-          <Route path="/products" component={Products} /> */}
+          <Route path="/" component={Products} />
+          <Route path="/addProducts" component={AddProducts} />
+          <Route path="/products" component={Products} />
         </div>
       </Router>
     );
