@@ -1,11 +1,15 @@
 import React, { Component } from "react";
+// importing the action creators
 import { cartItemFetch, removeFromCart } from "../actions/products";
+// imprting the connect method for connecting store to component
 import { connect } from "react-redux";
 import ProductItem from "./ProductItem";
-
+// importing the success message
 import { successMessageAlert } from "../actions/alert";
 
+// this is the cart component
 class Cart extends Component {
+  // initializing the state
   constructor() {
     super();
 
@@ -13,15 +17,19 @@ class Cart extends Component {
       isCartItem: true,
     };
   }
+  // for fetching the cart items
   componentWillMount() {
     // console.log("FIRST");
 
     this.props.dispatch(cartItemFetch());
     // console.log("SECOND");
   }
+  // handling the remove item from cart
   handleRemoveFromCart = (product) => {
     // console.log("REMOVE", product);
+    // calling the remove from cart method
     this.props.dispatch(removeFromCart(product));
+    // calling the success messge
     successMessageAlert("Removed", "This Item is Remove From Your Cart");
   };
   render() {

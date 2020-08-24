@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 
+// this is the product item component
 class ProductItem extends Component {
+  // initializing the state
   constructor(props) {
     super(props);
     this.state = {
@@ -12,6 +14,7 @@ class ProductItem extends Component {
     };
   }
 
+  // taking the all field form the props and seting to the state
   componentDidMount() {
     const {
       id,
@@ -24,6 +27,7 @@ class ProductItem extends Component {
     this.setState({ id, name, rating, price, description, imageURL });
   }
 
+  // handling the add to cart
   handleAddToCart = (product) => {
     // console.log("Product ID", product);
     // // console.log("this.props", this.props.dispatch);
@@ -31,20 +35,24 @@ class ProductItem extends Component {
     this.props.onCartButtonClick(product);
   };
 
+  // handling the remove from cart
   handleRemoveFromCart = (product) => {
     // console.log("REMOVE", product);
     this.props.onCartButtonClick(product);
   };
 
+  // handling the delete item
   handleDelete = (product) => {
     this.props.onDeleteButtonClick(product);
   };
 
+  // handling the edit product
   handleEdit = (id) => {
     // console.log("ID", id);
     this.props.onEditButton(id);
   };
 
+  // handling the change when we are in edit mode
   handleChange = (type, value) => {
     if (type === "name") {
       this.setState({ name: value });
@@ -59,12 +67,14 @@ class ProductItem extends Component {
     }
   };
 
+  // handling the update mode
   handleUpdate = (id) => {
     // e.preventDefault();
     this.props.handleSave(id, this.state);
     this.props.onEditButton(" ");
   };
 
+  // handling the cancel mode
   handleCancel = (id) => {
     this.props.onEditButton(" ");
   };
@@ -195,23 +205,6 @@ class ProductItem extends Component {
           </div>
         )}
       </div>
-
-      // <div className="main-container-item">
-      //   <div className="left-block">
-      //     <img src={myImage} alt="product-img" />
-      //   </div>
-      //   <div className="middle-block">
-      //     <div className="product-name">RED CHAIR</div>
-      //     <p className="description">Description</p>
-      //     <div className="product-rating">Rating</div>
-      //   </div>
-      //   <div className="right-block">
-      //     <div className="product-price">
-      //       Price:<br></br> Rs 4000
-      //     </div>
-      //     <div className="edit-icon"></div>
-      //   </div>
-      // </div>
     );
   }
 }

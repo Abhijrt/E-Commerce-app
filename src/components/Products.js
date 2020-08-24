@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-
+// importing the connect method
 import { connect } from "react-redux";
+// improting the product item component
 import ProductItem from "./ProductItem";
+// fetching the action creators
 import fetchProducts, {
   addToCart,
   deleteProduct,
@@ -9,8 +11,10 @@ import fetchProducts, {
   cartItemFetch,
 } from "../actions/products";
 
+// importing the success message function
 import { successMessageAlert } from "../actions/alert";
 
+// function for sorting the object of array
 function sortObjectArray(a, b) {
   if (eval(a.price) < eval(b.price)) {
     return -1;
@@ -21,7 +25,9 @@ function sortObjectArray(a, b) {
   }
 }
 
+// product component
 class Products extends Component {
+  // initializing the state
   constructor() {
     super();
     this.state = {
@@ -30,6 +36,7 @@ class Products extends Component {
       sort: false,
     };
   }
+  // fetching the product item and cart item
   componentWillMount() {
     // console.log("STATE1", this.props);
     this.props.dispatch(fetchProducts());
@@ -37,17 +44,20 @@ class Products extends Component {
     // console.log("STATE2", this.props);
   }
 
+  // handling the add to cart
   handleAddToCart = (product) => {
     // console.log("CARTID", product);
     this.props.dispatch(addToCart(product));
     successMessageAlert("Added", "This item is added to your cart");
   };
 
+  // handling the delete item
   handleDelete = (product) => {
     this.props.dispatch(deleteProduct(product));
     successMessageAlert("Deleted", "This product is Deleted");
   };
 
+  // handling the edit button
   onEditButton = (id) => {
     // console.log("ID", id);
     this.setState({
@@ -55,11 +65,13 @@ class Products extends Component {
     });
   };
 
+  // handling the save button
   handleSave = (id, product) => {
     this.props.dispatch(updateProduct(id, product));
     successMessageAlert("Updated", "You changes are SuccessFully updated");
   };
 
+  // handling the sort button
   onClickSortByprice = () => {
     let { sort } = this.state;
     this.setState({

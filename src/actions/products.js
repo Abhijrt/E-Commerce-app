@@ -1,6 +1,9 @@
+// importing the action types
 import { ADD_PRODUCTS, ADD_TO_CART } from "./actionTypes";
+// importing the url funciton that write in the helper function
 import { APIUrls } from "../helpers";
 
+// this function is for fetching the products from the api
 export default function fetchProducts() {
   return (dispatch) => {
     const url = APIUrls.getProducts();
@@ -13,11 +16,13 @@ export default function fetchProducts() {
       })
       .then((data) => {
         // console.log("DATA", data);
+        // adding the data to the store
         dispatch(addProducts(data));
       });
   };
 }
 
+// action creator for add the data to the store
 function addProducts(products) {
   return {
     type: ADD_PRODUCTS,
@@ -25,6 +30,7 @@ function addProducts(products) {
   };
 }
 
+// this function is for adding the product in to the cart
 export function addToCart(product) {
   // console.log("ID", product);
   // console.log("JOSN", JSON.stringify(product));
@@ -45,11 +51,11 @@ export function addToCart(product) {
       })
       .then((data) => {
         // console.log("DATAPOST", data);
-        // dispatch(cartItemFetch());
       });
   };
 }
 
+// this function is for fetching the cart item
 export function cartItemFetch() {
   return (dispatch) => {
     const url = APIUrls.getCartItem();
@@ -64,12 +70,14 @@ export function cartItemFetch() {
         return response.json();
       })
       .then((data) => {
-        console.log("CARTITEMFETCH", data);
+        // console.log("CARTITEMFETCH", data);
+        // adding the cart item to the store
         dispatch(addCart(data));
       });
   };
 }
 
+// action creator for adding the cart item to the store
 export function addCart(carts) {
   // console.log("UPDATECART", carts);
   return {
@@ -78,6 +86,7 @@ export function addCart(carts) {
   };
 }
 
+// this function is for rmeove the product from the cart
 export function removeFromCart(product) {
   return (dispatch) => {
     let url = APIUrls.getCartItem();
@@ -96,11 +105,13 @@ export function removeFromCart(product) {
       })
       .then((data) => {
         // console.log("DATAPOST", data);
+        // for fetching the cart and update store
         dispatch(cartItemFetch());
       });
   };
 }
 
+// this function is for deleting the product from the products
 export function deleteProduct(product) {
   console.log("DELETE");
   return (dispatch) => {
@@ -120,11 +131,13 @@ export function deleteProduct(product) {
       })
       .then((data) => {
         // console.log("DATAPOST", data);
+        // updating the prodcut into the store
         dispatch(fetchProducts());
       });
   };
 }
 
+// this fuction is for adding the product to the products through api
 export function addToProducts(product) {
   return (dispatch) => {
     const url = APIUrls.getProducts();
@@ -141,11 +154,13 @@ export function addToProducts(product) {
       })
       .then((data) => {
         // console.log("DATA", data);
+        // updating the store by fetching the products
         dispatch(fetchProducts());
       });
   };
 }
 
+// this function is for updating the products detail
 export function updateProduct(id, product) {
   return (dispatch) => {
     const url = APIUrls.updateProductUrl(id);
@@ -162,6 +177,7 @@ export function updateProduct(id, product) {
       })
       .then((data) => {
         // console.log("DATA", data);
+        // updaitng the product detail and update store
         dispatch(fetchProducts());
       });
   };

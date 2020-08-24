@@ -1,10 +1,14 @@
 import React, { Component, createRef } from "react";
+// importing the connect method for connecting the store with component
 import { connect } from "react-redux";
+// importing the method from actions
 import { addToProducts } from "../actions/products";
-
+// importing the success message alert fucntion
 import { successMessageAlert } from "../actions/alert";
 
+// this is the ADD Product component
 class AddProducts extends Component {
+  // initializing the state
   constructor(props) {
     super(props);
     this.state = {
@@ -17,6 +21,7 @@ class AddProducts extends Component {
     this.formRef = createRef();
   }
 
+  // this function is for vaule that are given in the input box to set init the state
   handleChange = (type, value) => {
     if (type === "name") {
       this.setState({ name: value });
@@ -31,10 +36,14 @@ class AddProducts extends Component {
     }
   };
 
+  // this function is for handle the add the product button
   handleAddToProduct = (e) => {
     e.preventDefault();
+    // calling the addto product action creeator
     this.props.dispatch(addToProducts(this.state));
+    // calling the success merge alert
     successMessageAlert("Added", "SuccessFully Updated");
+    // reseting the inputs
     this.formRef.current.reset();
   };
 

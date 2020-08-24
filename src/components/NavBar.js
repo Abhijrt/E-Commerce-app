@@ -1,6 +1,9 @@
 import React, { Component } from "react";
+// importing the bootstrap component
 import { Navbar, Nav } from "react-bootstrap";
+// importing the image
 import myImage from "../images/my_image.jpeg";
+// importing the connect method
 import { connect } from "react-redux";
 
 class NavBar extends Component {
