@@ -1,9 +1,12 @@
-import { ADD_PRODUCTS } from "../actions/actionTypes";
+import {
+  ADD_PRODUCTS,
+  ADD_TO_CART,
+  REMOVE_FROM_CART,
+} from "../actions/actionTypes";
 
 const initialProductState = {
   products: [],
-  cart: [],
-  isShowCart: false,
+  carts: [],
 };
 
 export function products(state = initialProductState, action) {
@@ -15,6 +18,17 @@ export function products(state = initialProductState, action) {
         ...state,
         products: action.products,
       };
+    case ADD_TO_CART:
+      // console.log(state.products);
+      // let newCartArray = state.products.filter(
+      //   (product) => product.id === action.id
+      // );
+      console.log("Array", action.carts);
+      return {
+        ...state,
+        carts: action.carts,
+      };
+
     default:
       // console.log("DEFAULR");
       return state;

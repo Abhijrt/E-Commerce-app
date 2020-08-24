@@ -1,9 +1,13 @@
 import React, { Component } from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import myImage from "../images/my_image.jpeg";
+import { connect } from "react-redux";
 
-export default class NavBar extends Component {
+class NavBar extends Component {
   render() {
+    const { carts } = this.props;
+    const cartCount = carts.length;
+    console.log(cartCount);
     return (
       <div>
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -23,13 +27,13 @@ export default class NavBar extends Component {
                   alt="my-img"
                 />
               </Nav.Link>
-              <Nav.Link eventKey={2} href="#memes">
+              <Nav.Link eventKey={2} href="/carts">
                 <i
                   id="cart-icon"
                   className="fa fa-shopping-cart"
                   // aria-hidden="true"
                 ></i>
-                <span id="cart-count">0</span>
+                <span id="cart-count">{cartCount}</span>
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
@@ -38,3 +42,12 @@ export default class NavBar extends Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  console.log("CAT", state);
+  return {
+    carts: state.products.carts,
+  };
+}
+
+export default connect(mapStateToProps)(NavBar);

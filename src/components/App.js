@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Products from "./Products";
 import { connect } from "react-redux";
 
+import Cart from "./Cart";
+
 class App extends React.Component {
   render() {
     // console.log("STATEAPP", this.props.store);
@@ -13,10 +15,10 @@ class App extends React.Component {
       <Router>
         <div className="app">
           <NavBar />
-          <Products store={this.props.store} dispatch={this.props.dispatch} />
-          {/* <Route path="/" component={Products} /> */}
-          <Route path="/addProducts" component={AddProducts} />
-          <Route path="/products" component={Products} />
+          <Route path="/" exact component={Products} />
+          <Route path="/addProducts" exact component={AddProducts} />
+          <Route path="/products" exact component={Products} />
+          <Route path="/carts" exact component={Cart} />
         </div>
       </Router>
     );

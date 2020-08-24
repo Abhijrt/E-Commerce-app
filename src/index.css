@@ -59,7 +59,8 @@ button {
   font-size: xx-large;
 }
 
-.sort-btn {
+.sort-btn,
+.total {
   background-color: #fa8718;
   padding: 10px;
   color: white;
@@ -102,6 +103,7 @@ button {
 
 .left-block img {
   height: 180px;
+  width: 180px;
   border-radius: 40px;
 }
 
@@ -143,8 +145,13 @@ i {
 
 #cart-icon {
   color: white;
+  position: relative;
 }
 
 #cart-count {
   color: red;
+  padding-left: 0px;
+  padding-top: 0px;
+  position: absolute;
+  top: -1px;
 }
