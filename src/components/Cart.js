@@ -3,6 +3,8 @@ import { cartItemFetch, removeFromCart } from "../actions/products";
 import { connect } from "react-redux";
 import ProductItem from "./ProductItem";
 
+import { successMessageAlert } from "../actions/alert";
+
 class Cart extends Component {
   constructor() {
     super();
@@ -20,6 +22,7 @@ class Cart extends Component {
   handleRemoveFromCart = (product) => {
     // console.log("REMOVE", product);
     this.props.dispatch(removeFromCart(product));
+    successMessageAlert("Removed", "This Item is Remove From Your Cart");
   };
   render() {
     const { carts } = this.props.products;

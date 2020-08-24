@@ -9,6 +9,8 @@ import fetchProducts, {
   cartItemFetch,
 } from "../actions/products";
 
+import { successMessageAlert, errorMessageAlert } from "../actions/alert";
+
 class Products extends Component {
   constructor() {
     super();
@@ -27,10 +29,12 @@ class Products extends Component {
   handleAddToCart = (product) => {
     // console.log("CARTID", product);
     this.props.dispatch(addToCart(product));
+    successMessageAlert("Added", "This item is added to your cart");
   };
 
   handleDelete = (product) => {
     this.props.dispatch(deleteProduct(product));
+    successMessageAlert("Deleted", "This product is Deleted");
   };
 
   onEditButton = (id) => {
@@ -42,6 +46,7 @@ class Products extends Component {
 
   handleSave = (id, product) => {
     this.props.dispatch(updateProduct(id, product));
+    successMessageAlert("Updated", "You changes are SuccessFully updated");
   };
 
   render() {

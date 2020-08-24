@@ -2,6 +2,8 @@ import React, { Component, createRef } from "react";
 import { connect } from "react-redux";
 import { addToProducts } from "../actions/products";
 
+import { successMessageAlert } from "../actions/alert";
+
 class AddProducts extends Component {
   constructor(props) {
     super(props);
@@ -32,6 +34,7 @@ class AddProducts extends Component {
   handleAddToProduct = (e) => {
     e.preventDefault();
     this.props.dispatch(addToProducts(this.state));
+    successMessageAlert("Added", "SuccessFully Updated");
     this.formRef.current.reset();
   };
 
