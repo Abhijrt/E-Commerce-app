@@ -71,6 +71,7 @@ class ProductItem extends Component {
 
   render() {
     // console.log("PROPS", this.props);
+    const ratingArray = [1, 2, 3, 4, 5];
     const { product, isCartItem, editMode } = this.props;
     const { id, name, rating, price, description, imageURL } = this.state;
     // console.log("Hii", p);
@@ -86,7 +87,13 @@ class ProductItem extends Component {
             <div className="middle-block">
               <div className="product-name">{product.name}</div>
               <p className="description">{product.description}</p>
-              <div className="product-rating">{product.rating}</div>
+              <div className="product-rating">
+                {ratingArray.map((item) => {
+                  if (item <= product.rating) {
+                    return <i className="fa fa-star"></i>;
+                  }
+                })}
+              </div>
             </div>
             <div className="right-block">
               <div className="product-price">

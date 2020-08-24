@@ -1,8 +1,4 @@
-import {
-  ADD_PRODUCTS,
-  ADD_TO_CART,
-  REMOVE_FROM_CART,
-} from "../actions/actionTypes";
+import { ADD_PRODUCTS, ADD_TO_CART } from "../actions/actionTypes";
 
 const initialProductState = {
   products: [],
