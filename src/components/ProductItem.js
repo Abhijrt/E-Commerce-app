@@ -100,7 +100,7 @@ class ProductItem extends Component {
               <div className="product-rating">
                 {ratingArray.map((item) => {
                   if (item <= product.rating) {
-                    return <i className="fa fa-star"></i>;
+                    return <i id="star-container" className="fa fa-star"></i>;
                   }
                 })}
               </div>

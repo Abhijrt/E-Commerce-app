@@ -155,3 +155,7 @@ i {
   position: absolute;
   top: -1px;
 }
+
+#star-container {
+  padding: 0;
+}
