@@ -180,3 +180,51 @@ Link {
 .edit-icon {
   cursor: pointer;
 }
+
+@media screen and (max-width: 1200px) {
+  .main-container-item {
+    width: 90%;
+    height: auto;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  form {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .main-container-item {
+    width: 90%;
+    height: auto;
+    width: 100%;
+    margin-left: 0;
+  }
+  .middle-block {
+    margin-left: 50px;
+  }
+  form {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .main-container-item {
+    display: flex;
+    /* justify-content: center;
+    align-content: center; */
+    height: auto;
+    width: 100%;
+    margin-left: 0;
+  }
+  .middle-block {
+    margin-left: 100px;
+  }
+  .add-btn {
+    width: 100%;
+  }
+  form {
+    width: 90%;
+  }
+}
