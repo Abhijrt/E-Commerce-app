@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 // importing the method from actions
 import { addToProducts } from "../actions/products";
 // importing the success message alert fucntion
-import { successMessageAlert } from "../actions/alert";
+import { successMessageAlert, alertMessage } from "../actions/alert";
 
 // this is the ADD Product component
 class AddProducts extends Component {
@@ -39,6 +39,18 @@ class AddProducts extends Component {
   // this function is for handle the add the product button
   handleAddToProduct = (e) => {
     e.preventDefault();
+    const { name, price, description, rating, imageURL } = this.state;
+    if (
+      name.length === 0 ||
+      price.length === 0 ||
+      description.length === 0 ||
+      rating.length === 0 ||
+      imageURL.length === 0
+    ) {
+      alertMessage("Missing Field", "Please Enter All Fields");
+      return;
+    }
+
     // calling the addto product action creeator
     this.props.dispatch(addToProducts(this.state));
     // calling the success merge alert

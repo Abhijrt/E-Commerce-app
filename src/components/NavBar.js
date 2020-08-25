@@ -6,6 +6,8 @@ import myImage from "../images/my_image.jpeg";
 // importing the connect method
 import { connect } from "react-redux";
 
+import { Link } from "react-router-dom";
+
 class NavBar extends Component {
   render() {
     const { carts } = this.props;
@@ -14,12 +16,24 @@ class NavBar extends Component {
     return (
       <div>
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-          <Navbar.Brand href="/">E-Commerce</Navbar.Brand>
+          <Navbar.Brand>
+            <Link class="link" to="/">
+              E-Commerce
+            </Link>{" "}
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link href="/products">Products</Nav.Link>
-              <Nav.Link href="/addProducts">Add a Products</Nav.Link>
+              <Nav.Link>
+                <Link class="link" to="/products">
+                  Products
+                </Link>{" "}
+              </Nav.Link>
+              <Nav.Link>
+                <Link class="link" to="/addProducts">
+                  Add a Products
+                </Link>{" "}
+              </Nav.Link>
             </Nav>
             <Nav>
               <Nav.Link href="#deets">Abhay Jirati</Nav.Link>
@@ -30,13 +44,15 @@ class NavBar extends Component {
                   alt="my-img"
                 />
               </Nav.Link>
-              <Nav.Link eventKey={2} href="/carts">
-                <i
-                  id="cart-icon"
-                  className="fa fa-shopping-cart"
-                  // aria-hidden="true"
-                ></i>
-                <span id="cart-count">{cartCount}</span>
+              <Nav.Link eventKey={2}>
+                <Link class="link" to="/carts">
+                  <i
+                    id="cart-icon"
+                    className="fa fa-shopping-cart"
+                    // aria-hidden="true"
+                  ></i>
+                  <span id="cart-count">{cartCount}</span>
+                </Link>
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>

@@ -10,3 +10,13 @@ export function successMessageAlert(title, message) {
     button: "Ok",
   });
 }
+
+// is any alert are given to the user
+export function alertMessage(title, message) {
+  swal({
+    title: title,
+    text: message,
+    icon: "warning",
+    button: "Ok",
+  });
+}
