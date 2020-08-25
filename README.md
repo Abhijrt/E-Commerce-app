@@ -1,5 +1,41 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Go for the Preview
+#
+
+
+## ALL Product
+![ALl Product](./src/images/AllProduct.png)
+
+## Cart Item 
+![cart ](./src/images/Cart.png)
+
+## Add Product
+![add product](./src/images/AddProduct.png)
+
+## How can i install locally?
+    1. First you need to have installed node js in your system.
+    2. Then you need to clone the repo.
+    3. Then open the repo in the editor.
+    4. Then run the command.
+    >> npm install
+    5. Then run the server.
+    >> npm start
+    
+## How it works?
+    There  are many functionality in the project
+    1. You can see the all products.
+    2. You can see the cart item.
+    3. You can see the cart Total.
+    4. You can add the product to the products list by going to the add product button.
+    5. You can add the product to the cart by clicking the add to cart button.
+    6. You can remove the product from the cart by clicking the remove from the cart.
+    7. You can edit the product details by clicking the pencil button.
+    8. You can delete the product bu clicking the delete button.
+    9. You can sort the product list by clicking the sort by price button.
+    
+
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -27,42 +63,4 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
